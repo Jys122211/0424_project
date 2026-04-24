@@ -1,52 +1,81 @@
 <template>
   <div class="card">
-    <h2>효선</h2>
-    <p>반갑습니당 👋</p>
+    <div class="top-section">
+      <img :src="profileImg" class="profile-img" />
+      <div class="name-area">
+        <h2>효선</h2>
+        <p class="greeting">반갑습니당 👋</p>
+      </div>
+    </div>
+    <div class="divider"></div>
     <div class="info-list">
-      <span class="label">이름</span>
-      <span class="value">안효선</span>
-      <span class="label">MBTI</span>
-      <span class="value">INFP</span>
-      <span class="label">취미</span>
-      <span class="value">게임, 유튜브보기</span>
+      <span class="label">이름</span><span class="value">안효선</span>
+      <span class="label">MBTI</span><span class="value">INFP</span> <span class="label">취미</span
+      ><span class="value">게임, 유튜브보기</span>
     </div>
   </div>
 </template>
 
+<script setup>
+import profileImg from '@/assets/img/hs.png';
+</script>
+
 <style scoped>
 .card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px 40px;
-  text-align: center;
+  background: linear-gradient(145deg, #fff5f5, #fde8e8);
+  border: 1.5px solid #e8b4b8;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 3px 3px 10px rgba(232, 180, 184, 0.35);
 }
 
-.card h2 {
-  margin-bottom: 5px;
+.top-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
 }
 
-.card p {
-  margin: 5px 0;
-  color: #555;
-  font-size: 15px;
+.profile-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e8b4b8;
+}
+
+.name-area h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  color: #c9747a;
+}
+
+.greeting {
+  margin: 0;
+  font-size: 13px;
+  color: #c9747a;
+}
+
+.divider {
+  height: 1px;
+  background: #e8b4b8;
+  margin-bottom: 12px;
 }
 
 .info-list {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 6px 12px;
-  margin-top: 12px;
-  text-align: left;
+  grid-template-columns: auto auto;
+  gap: 6px 14px;
 }
 
 .label {
-  color: #888;
+  color: #c9747a;
   font-size: 13px;
   font-weight: bold;
 }
 
 .value {
-  color: #333;
+  color: #555;
   font-size: 13px;
 }
 </style>
